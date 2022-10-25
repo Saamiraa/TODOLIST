@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: inherit;
+}
+
+@font-face {
+    font-family: 'Nunito-Black';
+    src: url(Nunito-Black.ttf);
+}
+@font-face {
+    font-family: 'Nunito';
+    src: url(Nunito-Bold.ttf);
+}
+:root{
+    --pColor : #f01380;
+    --dColor: #2d2d2d;
+    --lColor : #f5f5f5;
+    --gColor : #b9bac7;
+    --bColor: #131313;
+}
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--dColor);
+    font-family: 'Nunito';
+    color: var(--gColor);
+    height: 100vh;
+    line-height: 2rem;
+}
+header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+header i {
+    font-size: 4rem;
+    background-color: var(--pColor);
+}
+.header-title h1{
+    color: var(--lColor);
+    font-family: 'Nunito-Black';
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: absolute;
+    top: 22vh;
+    position: absolute;
+    top: 22vh;
+    /* این دوتا اخری رو برای این اضافه میکنیم که آیتم اضافه میشه نره بالا فرمه و آیتم های بیان پایین */
+}
+form{
+    width: 30em;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.inputContainer{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: var(--bColor);
+    border-radius: 4em;
+    padding-left: 1em;
+}
+input{
+    width: 100%;
+    font-size: 1.3rem;
+    background-color: transparent;
+    padding: 0.5em;
+    color: var(--lColor);
+}
+.inputContainer i{
+    font-size: 1.5rem;
+}
+.addItemButton{
+    background-color: var(--pColor);
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.categoryContainer{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    margin-right: 30px;
+}
+.categoryContainer i{
+    font-size: 1.3rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.work{
+    background-color: #560bad;
+}
+.gym{
+    background-color: #fb5607;
+}
+.home{
+    background-color: #6a994e;
+}
+.categoryContainer.add{
+    animation: moveCategory 1s forwards
+}
+.categoryContainer.add i{
+    animation: turnIcon 1s 1;
+}
+@keyframes moveCategory{
+    0%{
+        right: 0;
+    }
+    43%{
+        right: -140px;
+    }
+    100%{
+        right: -140px;
+        z-index: 1;
+    }
+}
+@keyframes turnIcon{
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+.todoContainer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.todoItem{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    transition: 0.5s;
+    letter-spacing: 1px;
+}
+.todoItem i{
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.todoItem li{
+    width: 100%;
+}
+.completed{
+    opacity: 0.3;
+    order: 2;
+}
+.completed li{
+    text-decoration: line-through;
+}
+.editing li{
+    animation: blink 0.3s;
+    color: black;
+}
+.editing .fa-file-edit {
+    color: var(--bColor);
+}
+@keyframes blink{
+    to{opacity: 0}
+}
