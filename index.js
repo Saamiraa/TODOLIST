@@ -89,3 +89,4 @@ function saveTodo(text,icon){
 }
 
 //!اینجا میخوایم بگیم اطلاعات رو بخون
+console.log(x)
